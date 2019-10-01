@@ -1,0 +1,31 @@
+<script> 
+
+let x=1; y=101
+
+
+
+
+guess= ((x+y)/2)-1;
+
+while(true) {
+let input= prompt( 'Is your number ' + guess + '?')
+if (input == '<') {
+  y=guess;
+  guess= Math.floor((x+y)/2);
+} else if (input=='>') {
+  x=guess;
+  guess=Math.floor((x+y)/2);
+} else if (input== 'Yes') {
+  alert( 'You won!') 
+  break; 
+}
+  
+}
+ 
+</script>
+
+
+
+
+
+

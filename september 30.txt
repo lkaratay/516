@@ -1,0 +1,31 @@
+<script>
+"use strict";
+
+const min= function(x,y){
+  if (x<y){
+    return x;
+  } else{
+    return y ;
+  }
+  return x<y ? x: y; //yukardaki kod yerine bunu da yazabilrdik 
+  //return x den sonrasini yazmasak da kod calisacak 
+}
+
+let x =  min(3,5)
+
+const average= function(x,y){
+  return (x+y)/2);
+  }
+  console.log(5,7)
+  
+ const odd_or_even =fucntion(x){
+ 
+ 
+
+
+
+
+
+
+
+</script>
