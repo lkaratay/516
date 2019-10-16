@@ -1,0 +1,37 @@
+<script>
+
+'use strict'
+
+let shift= Number(prompt('Enter shift'));
+let text= prompt('Enter text');
+let yeniLetter= "";
+
+
+for (let i = 0; i < text.length; i++) {
+  let transformation= text[i];
+  let myLetter= text.charCodeAt(i);
+  if (shift > 0) {
+    if (myLetter >=65 && myLetter<=90){
+      transformation=String.fromCharCode((myLetter-65+shift)%26+65);   //we aren't going beyond our limit, we are interested in our remainder  
+    }	
+    else if( myLetter >=97 && myLetter<=122){
+           transformation=String.fromCharCode((myLetter-97+shift)%26+97); //onceden += idi = yaptim duzeldi, ama transformation i eklemeden once calisiyordu 
+	}
+  }
+
+  else {
+    if (myLetter >=65 && myLetter<=90){
+      transformation=String.fromCharCode((myLetter-90+shift)%26+90);
+    }	
+	else if(myLetter >=97 && myLetter<=122){
+           transformation=String.fromCharCode((myLetter-122+shift)%26+122);
+	}
+  }
+  
+    yeniLetter+=transformation;
+}
+
+
+  alert(yeniLetter);
+  
+ </script>
