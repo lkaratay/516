@@ -1,0 +1,43 @@
+<script>
+
+const questions = {
+  "in": ["My daughter was born ___ winter.", "The diary is ___ the drawer.", "There is some milk ___ the fridge.", "I visited Iowa ___ 1987.", 
+         "The kids are playing ___ the garden."],
+  "on": ["There is a picture ___ the wall.", "The prices are shown ___ the menu.", "The images are ___ the page.", 
+         "The assignment is due ___ Wednesday.","The book is ___ the table."],
+  "at": ["Meet me ___ the airport.", "He is waiting ___ the bus stop.", "I saw him ___ the movie theater.", "Are you ___ home?",
+         "Don't use your phone ___ work."],
+  "to": ["I will go ___ Turkey.", "Don't talk ___ me like that!", "Give this ___ your sister.", "Amazon sent it back ___ me.", 
+         "I sent a bouqet of flower ___ my girlfriend." ],
+  "with": ["I went to Turkey ___ my parents.", "I fell in love ___ him.", "I agree ___ you.", "The manager will be ___ you shortly.", 
+         "I saw you ___ that wierd guy."] 
+}
+
+let score = {"in" : 0, "on" : 0, "at" : 0, "to" : 0, "with" : 0}
+
+while(true) {
+  let poor_preposition = Math.min(...Object.values(score));
+  function getKeyfromValue(value) {
+    let keyArray = Object.keys(score);
+    let valueArray = Object.values(score);
+    let valueIndex = valueArray.indexOf(value);
+    return keyArray[valueIndex];
+    }
+
+  let worst_level = getKeyfromValue(poor_preposition);
+  let worst_level_questions = questions[worst_level]
+  let random_question = worst_level_questions[Math.floor(Math.random()*worst_level_questions.length)]
+  let input = prompt(random_question)
+  
+  if (input == worst_level) {
+    alert("Correct!");
+    score[worst_level] += 1;
+  }
+  else {
+    sorry = random_question.replace("___", worst_level);
+    alert(sorry);
+    score[worst_level] += (-1);
+  }
+}
+
+</script>
