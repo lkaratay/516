@@ -1,0 +1,29 @@
+<script>
+while(true){
+
+let text=prompt('Enter a sentence!');
+
+//let regex=/[aeiouy]/gi;
+//alert(text.replace(regex, "aig"));
+
+
+
+let yeniText=text.replace(/([aeiouy]+)/gi, "aig$1");
+let yeniText1=yeniText.replace(/(aige)\b/gi, "e"); //love
+let yeniText2=yeniText1.replace(/\b([^aeiouy]+)e\b/g, "$1aige")//be me he etc
+//let yeniText2=yeniText1.replace(/\b(aigy)/gi, "y");//yellow
+
+//let yeniText3=yeniText2.replace(/(?<=\w)aigy(?=\w)/gi, "y")//Matches x only if x is preceded by y. (?<=y)x)
+
+alert(yeniText2);
+}
+
+//(/\b\w+y\w+\b/gi,"y")
+
+//her iki kod da calisiyor.Choose one. 
+
+// 1) /[aeiouy]/gi bu harfleri bul 2)([aeiouy]) parantez ekledik bu harfleri hatirla dedik (capturing paranthesis)
+//3) $1 i captured value e ulasmak icin kullanicaz. 4) oncesine de aig ekleyerek captured value e onu eklemisini saglicaz 
+
+</script>
+
